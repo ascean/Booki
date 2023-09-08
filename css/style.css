@@ -1,0 +1,935 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    min-width: 375px;
+}
+
+a {
+    color: black;
+}
+
+h1,h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 18px;
+}
+
+nav a {
+    font-size: 16px;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3%;
+}
+
+#logo-container {
+    width: 50%;
+    margin-bottom: 20px;
+}
+#logo {
+    width: 150px;
+}
+#logo-mobile {
+    display: none;
+}
+
+
+/* SECTIONS */
+#section-search, #section-filter {
+    margin: auto 3%;
+}
+
+#section-place, #section-activity {
+    margin: 40px 3%;
+}
+
+/****************** SECTION RECHERCHE **********************/
+
+form {
+    display: flex;
+    height: 50px;
+    position: relative;
+}
+
+/*conteneur icone*/
+#search-container-localisation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+
+    /*pour pallier modif largeur écran*/
+    position: absolute;
+    left:0;
+    z-index: 9;
+}
+/* icone */
+#search-localisation {
+    font-size: 20px;
+}
+
+/*conteneur saisie + btn*/
+#search-container {
+    display: flex;
+    width: 50%;
+}
+/* zone saisie */
+#search-text {
+    font-size: 18px;
+    font-weight: 700;
+    width: 80%;
+    border: 1px solid #f2f2f2;
+    outline: none;
+    padding-left: 10px;
+    /*prise en compte de la largeur de search-container-localisatiob*/
+    margin-left: 50px;
+}
+
+/*bouton*/
+.btn-submit {
+    height: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*bouton texte*/
+#search-btn-text {
+    color: white;
+    font-size: 18px;
+    background-color: #0065fc;
+    border: 1px solid #0065fc;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 0 30px;
+}
+
+/*bouton icone*/
+#search-btn-icon {
+    display: none;
+}
+
+/*zone info*/
+#section-search .info {
+    margin-bottom: 30px;
+}
+
+/********************** SECTION FILTRES **********************/
+#section-filter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/*container filtres*/
+#filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Libellé "filtres" */
+#filter-container>p {
+    /*alignement du contenu*/
+    line-height: 50px;
+    height: 50px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+/*ul filtres*/
+#filter-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-item {
+    /*permet positionnement icone*/
+    display: flex;
+    align-items: center;
+    /*filtre : Icone +libellé*/
+    position: relative;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+/*icone filtre*/
+.filter-icon-container {
+    /*contenant icone*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #DEEBFF;
+    border-radius: 50px;
+    outline: 1px solid #DEEBFF;
+}
+
+/*icone*/
+.filter-icon {
+    color: #0065fc;
+    font-size: 18px;
+}
+
+/*texte filtres*/
+.filter-item p {
+    font-weight: bold;
+    outline: 2px solid rgb(225, 224, 224);
+    outline: 2px solid rgb(225, 224, 224);
+    border-radius: 30px;
+    height: 95%;
+    padding: 15px 30px 15px 60px;
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+/*SURVOL filtres*/
+.filter-item:hover p {
+    color: #0065fc;
+    outline: 2px solid #0065fc;
+}
+
+.filter-item:hover .filter-icon-container {
+    background-color: #0065fc;
+}
+
+.filter-item:hover .filter-icon {
+    color: #DEEBFF;
+}
+
+/********************** ZONE INFO **********************/
+#info-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+#info-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    background-color: white;
+    border-radius: 50px;
+    border: 2px solid #f2f2f2;
+    padding: 3px;
+}
+
+#info-icon {
+    color: #0065fc;
+    font-size: 14px;
+}
+
+/********************** SECTION HEBERGEMENT **********************/
+#section-place {
+    display: flex;
+    gap: 40px;
+}
+
+#place-container-left {
+    width: 70%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+}
+
+/*titres Hébergements et populaires*/
+#section-place h2, #section-place #popular-star {
+    padding: 10px 1%;
+    height: 60px;
+}
+/* zone hébergementS */
+#place-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* zone hébergement */
+.place-item {
+    width: 31%;
+    margin: 1%;
+    padding: 0.5%;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 20px;
+}
+
+/*zone image hébergment*/
+.place-img {
+    /*hauteur de la carte fixe*/
+    height: 150px;
+    /* pour image absolute */
+    position: relative;
+    /*cache ce qui déborde du bloc*/
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* image hébergment */
+.place-img img {
+    /* occupation de la largeur de la carte*/
+    width: 160%;
+
+    /* Centrage en fonction de la taille de l'image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Transition : utilisé dans le hover */
+    transition-property: width;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+
+    object-fit: cover;
+}
+
+
+.place-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.place-name,.place-price, .place-note {
+    padding: 4px;
+}
+
+.place-price p {
+    font-size: 16px;
+}
+
+
+.place-note {
+    font-size: 12px;
+    color: #0065fc;
+}
+
+.note-star-grey, .place-star-grey {
+    color: #f2f2f2;
+}
+
+#place-plus {
+    padding: 3% 10px;
+    font-weight: 800;
+}
+
+/* SURVOL modif taille image */
+.place-item:hover .place-img img {
+    width: 180%;
+}
+
+/* SURVOL modif couleur titre*/
+.place-item:hover .place-infos .place-name h3 {
+    color: #0065fc;
+}
+
+/********************************* SECTION POPULAIRES **********************************/
+#place-container-right {
+    width: 30%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+/* titre + étoile*/
+#popular-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* zone hébergements populaires*/
+#popular-items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+/* zone hébergement populaire*/
+.popular-item {
+    width: 95%;
+    margin: 2%;
+    padding: 1%;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 20px;
+}
+
+/*a entièrement clicable : englobe tout l'article*/
+.popular-item a {
+    display: flex;
+    width: 100%;
+}
+
+/* zone image hébergement populaire */
+.popular-img {
+    width: 40%;
+    /*hauteur de la carte fixe*/
+    height: 170px;
+    position: relative;
+    /*cache ce qui déborde du bloc*/
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+/* image hébergement populaire */
+.popular-img img {
+    /* l'image occupe toute la largeur de la carte*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* Centrage en fonction de la taille de l'image */
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    /* Transition : utilisé dans le hover */
+    transition-property: width;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    object-fit: cover;
+}
+
+
+.popular-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    padding: 10px;
+}
+
+/*SURVOL images portrait*/
+.popular-item:hover .popular-img img {
+    /* modif taille image au survol*/
+    width: 300%;
+}
+
+/*SURVOL images en mode paysage*/
+.popular-item:hover .popular-img .zoom img {
+    /* modif taille image au survol*/
+    width: 350%;
+}
+
+/* SURVOL modif couleur titre */
+.popular-item:hover .popular-infos .place-name h3 {
+    color: #0065fc;
+}
+
+/********************** SECTION ACTIVITES ***********************/
+
+#section-activity h2 {
+    padding-bottom: 30px;
+}
+
+#activity-container {
+    display: flex;
+    justify-content: space-between;
+    height: 550px;
+}
+
+/* toutes les zones activités*/
+.activity-item .activity-img {
+    /*hauteur de la carte fixe*/
+    height: 250px;
+    position: relative;
+    /*cache ce qui déborde du bloc*/
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* zone activité 1 colonne = 2 activités */
+.activity-items .activity-img {
+    /*hauteur de la carte fixe*/
+    height: 210px;
+    position: relative;
+    /*cache ce qui déborde du bloc*/
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* image */
+.activity-item .activity-img img,
+.activity-item-double .activity-img img {
+
+    /* Centrage en fonction de la taille de l'image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Transition : utilisé dans le hover */
+    transition-property: width;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+
+    object-fit: cover;
+}
+
+.activity-name {
+    display: flex;
+    height: 50px;
+}
+
+.activity-name h3 {
+    width: 100%;
+    margin: auto 20px;
+}
+
+/*zone 1 colonne = 1 activité*/
+.activity-item, .activity-item a {
+    width: 23%;
+    height: 100%;
+    margin: 0px;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 20px;   
+}
+
+.activity-item .activity-img {
+    object-fit: cover;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.activity-item .activity-img img {
+    width: 400%
+}
+
+/* zone 1 colonne = 2 activités */
+.activity-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 23%;
+}
+
+/* activité de la zone double activité */
+.activity-item-double {
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* gestion des hauteurs des activités des colonnes doubles */
+#activity-container>div:nth-child(2)>article:nth-child(1)>a>div.activity-img,
+#activity-container>div:last-child>article:nth-child(2)>a>div.activity-img {
+    height: 240px;
+}
+
+#activity-container>div:nth-child(2)>article:nth-child(2)>a>div.activity-img,
+#activity-container>div:last-child>article:nth-child(1)>a>div.activity-img {
+    height: 180px;
+}
+
+/* l'image occupe toute la largeur de la carte*/
+.activity-item-double .activity-img img {
+    width: 150%;
+}
+
+/* SURVOL modif taille image*/
+.activity-item:hover .activity-img img {
+    width: 480%;
+}
+
+/* SURVOL modif couleur titre */
+.activity-item:hover .activity-name h3 {
+    color: #0065fc;
+}
+
+/* SURVOL modif taille image*/
+.activity-item-double:hover .activity-img img {
+    width: 250%;
+}
+
+/* SURVOL modif couleur titre */
+.activity-item-double:hover .activity-name h3 {
+    color: #0065fc;
+}
+
+/************************* FOOTER ***************************/
+footer {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20% 10px 5%;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+footer ul li {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+footer a:hover {
+    color: #0065fc;
+}
+
+/* MENU desktop + tablette */
+@media screen and (min-width:768px) {
+    
+    nav {
+        width: 100%;
+        height: 150px;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        gap: 3%;
+    }
+    
+    nav ul li {
+        /* padding-top: 60px; */
+        padding-top: 60px;
+    }
+    nav ul li a {
+        padding: 56px 20px 0 20px;
+    }
+    
+    nav ul li a {
+        border-top: 3px solid transparent;
+    }
+    nav ul li a:hover {
+        border-top-color: #0065fc;
+        color: #0065fc;
+    }
+}
+
+/************************DESKTOP*****************************/
+@media screen and (min-width:992px) {
+    
+    .activity-item .activity-img {
+        height: 91%;
+        /*taille de la zone image fixe*/
+    }
+}
+
+/**************************** TABLETTE *************************/
+@media screen and (min-width:768px) and (max-width: 992px) {
+    
+    #search-container {
+        width: 100%;
+    }
+
+    #section-place {
+        flex-direction: column-reverse;
+    }
+
+    #place-container-left,
+    #place-container-right {
+        width: 100%;
+    }
+
+    #place-items {
+        gap: 25px;
+    }
+    .place-item {
+        width: 48%;
+        margin: 0;
+    }
+
+    .place-img {
+        height: 180px;
+        /*taille de la carte fixe*/
+    }
+
+    .place-img img {
+        width: 120%;
+        /* l'image occupe toute la largeur de la carte*/
+    }
+
+    .place-item:hover .place-img img {
+        width: 150%;
+        /* modif taille image au survol*/
+    }
+
+    #popular-items {
+        gap: 25px;
+    }
+
+    .popular-item {
+        width: 100%;
+        margin: 0;
+        padding: 0.5%;
+    }
+
+    .popular-item:hover .popular-img img {
+        /*images portrait*/
+        width: 150%;
+        /* modif taille image au survol*/
+    }
+
+    .popular-item:hover .popular-img.zoom img {
+        /*cas des images en mode paysage*/
+        width: 150%;
+        /* modif taille image au survol*/
+    }
+
+    #activity-container {
+        flex-wrap: wrap;
+        gap: 30px;
+        height: 100%;
+
+    }
+
+    .activity-item,.activity-items {
+        width: 47%;
+    }
+
+    .activity-item .activity-img {
+        height: 500px;
+    }
+
+    .activity-item-double .activity-img img {
+        width: 100%;
+        /* l'image occupe toute la largeur de la carte*/
+    }
+
+    .activity-item-double:hover .activity-img img {
+        width: 150%;
+        /* modif taille image au survol*/
+    }
+
+    .activity-item .activity-img img {
+        width: 240%
+    }
+
+    .activity-item:hover .activity-img img {
+        width: 300%;
+        /* modif taille image au survol*/
+    }
+
+    footer {
+        padding-right: 50px;
+    }
+}
+
+/*************************** mobile ***************************/
+@media screen and (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0;
+        padding: 20px 10px;
+        align-items: center;
+    }
+
+    #logo-container {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    #logo-mobile {
+        display: inline-block;
+        width: 150px;
+    }
+    #logo {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        padding-top: 20px;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        width: 50%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: inline-block; /*occupe toute la largeur*/
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 3px solid #f2f2f2; /*évite le sursaut au survol*/
+    }
+    
+    nav ul li a:hover {
+        border-bottom-color: #0065fc;
+        color: #0065fc;
+    }
+
+    #section-search, #section-filter {
+        margin: 0px 20px;
+    }
+
+    #section-place,#section-activity {
+        margin: 50px 0px;
+    }
+
+    /* SECTION RECHERCHE */
+    #section-search {
+        padding: 0 10px;
+    }
+
+    #search-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    #search-text {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        width: 100%;
+    }
+
+    #search-btn-text {
+        display: none;
+    }
+
+    #search-btn-icon {
+        width: 60px;
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 18px;
+        background-color: #0065fc;
+        color: white;
+        border: none;
+        border-radius: 15px;
+    }
+
+    /*********************** SECTION FILTER ***********************/
+    #section-filter {
+        padding: 0 10px;
+    }
+
+    /**************** SECTIONS HEBERGEMENT et POPULAIRE ****************/
+
+    #section-place {
+        flex-direction: column-reverse;
+    }
+
+    #place-container-left, #place-container-right {
+        width: 100%;
+        border-radius: 0px;
+        padding: 30px;
+    }
+
+    #place-container-left {
+        background-color: white;
+    }
+
+    #place-items, #popular-items {
+        gap: 30px;
+    }
+    .place-item, .popular-item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .place-img {
+        height: 200px;
+    }
+
+    .place-img img {
+        width: 100%;
+    }
+
+    .place-infos {
+        padding: 2%;
+    }
+
+    .popular-img {
+        width: 40%;
+        /*taille de la carte fixe*/
+        height: 180px;
+    }
+
+    .popular-item {
+        padding: 0.5%;
+    }
+
+    /************************ SECTION ACTIVITES ************************/
+    #activity-container {
+        flex-direction: column;
+        padding: 0 5%;
+        gap: 30px;
+        height: 100%;
+    }
+
+    .activity-item, .activity-items {
+        width: 100%;
+    }
+
+    #section-activity h2 {
+        padding: 10px 5% 40px;
+    }
+
+    .activity-items {
+        gap: 40px;
+    }
+
+    #activity-container>div:nth-child(2)>article:nth-child(1)>a>div.activity-img,
+    #activity-container>div:last-child>article:nth-child(2)>a>div.activity-img {
+        height: 250px;
+    }
+
+    #activity-container>div:nth-child(2)>article:nth-child(2)>a>div.activity-img,
+    #activity-container>div:last-child>article:nth-child(1)>a>div.activity-img {
+        height: 250px;
+    }
+
+    .activity-item .activity-img img {
+        width: 100%
+    }
+    
+    .activity-item:hover .activity-img img {
+        width: 150%;
+        /* modif taille image au survol*/
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
